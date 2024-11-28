@@ -1,43 +1,38 @@
-# AssignmentGoApiCurrentTorontoTime
 # Go API for Current Toronto Time with MySQL Logging
 
-This project provides a simple Go-based web API that returns the current time in **Toronto** and logs each request to a MySQL database. The API exposes two main endpoints:
+## Overview
 
-1. **`/current-time`**: Returns the current time in Toronto and logs the timestamp in the database.
-2. **`/time-logs`**: Retrieves all the logged timestamps from the database.
+This project involves the development of a Go-based API that provides the current time in **Toronto**, and logs each API request to a MySQL database. The main functionalities of the API are:
 
-## Features
-- Returns the current time in **Toronto** (adjusted for the correct timezone).
-- Logs the timestamp to a MySQL database with every request made to the `/current-time` endpoint.
-- Allows retrieval of all logged timestamps via the `/time-logs` endpoint.
+1. **Current Time Endpoint**: It returns the current time in Toronto.
+2. **Logging Endpoint**: It logs the time for every request made to the API into a MySQL database.
 
-## Requirements
+## Objectives
 
-To run this project, make sure you have the following:
+### 1. **Go API Endpoint**:
+   - Build an endpoint that returns the current Toronto time in **JSON format**.
 
-- [Go (v1.18 or higher)](https://golang.org/dl/)
-- [MySQL Database](https://dev.mysql.com/downloads/installer/) installed and running
-- A MySQL database and table for storing the timestamps
+### 2. **MySQL Database Integration**:
+   - Set up a MySQL database.
+   - Log the timestamp of each API request in the database.
 
-## Setup Instructions
+### 3. **Time Zone Handling**:
+   - Ensure the time returned by the API is adjusted to Toronto's timezone, using Go's time functionality.
 
-### 1. **Install Go**
 
-Ensure that Go is installed on your system. If it's not, you can download and install it from the official [Go downloads page](https://golang.org/dl/).
+## Steps followed
 
-### 2. **Install MySQL**
+### 1. **Install MySQL Database**
 
-Download and install MySQL from [here](https://dev.mysql.com/downloads/installer/) if you don't already have it installed. Make sure the MySQL service is running before proceeding.
+Once MySQL is installed, log in to your MySQL server and create the necessary database and table:
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
-### 3. **Create Database and Table**
+### 2. **Initialise the project**
+![alt text](image-3.png)
+![alt text](image-4.png)
 
-After setting up MySQL, execute the following SQL queries to create the database and table where the time logs will be stored:
+### 3. **Installed the required dependencies**
+![alt text](image-5.png)
 
-```sql
-CREATE DATABASE avidb;
-USE avidb;
-
-CREATE TABLE toronto_time_log (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    timestamp DATETIME NOT NULL
-);

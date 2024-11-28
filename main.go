@@ -15,8 +15,8 @@ var db *sql.DB
 // Initialize the MySQL database connection
 func initDB() {
 	var err error
-	// Replace with your MySQL credentials
-	dsn := "root:Loyalist@2468@tcp(localhost:3306)/avidb" // Adjust credentials as needed
+
+	dsn := "root:Loyalist@2468@tcp(localhost:3306)/avidb"
 	db, err = sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
